@@ -16,8 +16,8 @@ async function pingAndSendWebhook(host) {
         db.set(host, result)
         if (!result) {
             if (curr) {
-                let embed = createStatusEmbed("Network Status", `Unable to connect to ${host} At ${(new Date()).toISOString()}`)
-                await sendEmbed(embed)
+                let embed = createStatusEmbed("Network Status")
+                await sendEmbed(embed, `Unable to connect to ${host} At ${(new Date()).toISOString()}`)
             }
             console.log("Unable to Connect to", host, `At ${(new Date()).toISOString()}`)
         } else console.log("Connected to", host, `At ${(new Date()).toISOString()}`)
